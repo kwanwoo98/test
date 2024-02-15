@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Monthly Schedule Management</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+    }
+    #calendar {
+        margin: 20px auto;
+        width: 280px; /* 7 days * 40px */
+        height: 240px; /* 6 rows * 40px */
+        border-collapse: collapse;
+    }
+    #calendar th, #calendar td {
+        border: 1px solid #dddddd;
+        padding: 8px;
+        text-align: center;
+        width: 40px;
+        height: 40px;
+    }
+    #currentDateTime {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    .schedule-input {
+        width: 100%;
+        margin-bottom: 5px;
+    }
+    .add-schedule-btn {
+        width: 100%;
+    }
+</style>
+</head>
+<body>
+    <div id="currentDateTime"></div>
+    <table id="calendar">
+        <thead>
+            <tr>
+                <th>Sun</th>
+                <th>Mon</th>
+                <th>Tue</th>
+                <th>Wed</th>
+                <th>Thu</th>
+                <th>Fri</th>
+                <th>Sat</th>
+            </tr>
+        </thead>
+        <tbody id="calendarBody">
+        </tbody>
+    </table>
+
+    <button id="openPopupBtn">Add Schedule</button>
+
+    <div id="scheduleModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <input type="text" id="scheduleInput" class="schedule-input" placeholder="Enter schedule">
+            <button id="addScheduleBtn" class="add-schedule-btn">Add Schedule</button>
+        </div>
+    </div>
+
+<script>
+    // Function to generate calendar
+    function generateCalendar(year, month) {
+        const calendarBody = document.getElementById("calendarBody");
+        calendarBody.innerHTML = "";
+        
+        const firstDay = new Date(year, month, 1);
+        const lastDay = new Date(year, month + 1, 0);
+        const daysInMonth = lastDay.getDate();
+        const startingDay = firstDay.getDay();
+
+        let date = 1;
+        for (let i = 0; i < 6; i++) {
+            const row = document.createElement("tr");
+            for (let j = 0; j < 7; j++) {
+                if (i === 0 && j < startingDay) {
+                    const cell = document.createElement("td");
+                    row.appendChild(cell);
+                } else if (date > daysInMonth) {
+                    break;
+                } else {
+                    const cell = document.createElement("td");
+                    cell.textContent = date;
+                    cell.setAttribute("data-date", date);
+                    cell.addEventListener("click", openScheduleModal);
+                    row.appendChild(cell);
+                    date++;
+                }
+            }
+            calendarBody.appendChild(row);
+        }
+    }
+
+    // Function to display current date and time
+    function displayCurrentDateTime() {
+        const now = new Date();
+        const currentDateTimeElement = document.getElementById("currentDateTime");
+        currentDateTimeElement.textContent = now.toLocaleString();
+    }
+
+    // Function to open schedule modal
+    function openScheduleModal(event) {
+        const modal = document.getElementById("scheduleModal");
+        const date = event.target.getAttribute("data-date");
+        const scheduleInput = document.getElementById("scheduleInput");
+        scheduleInput.setAttribute("data-date", date);
+        modal.style.display = "block";
+    }
+
+    // Function to close schedule modal
+    function closeScheduleModal() {
+        const modal = document.getElementById("scheduleModal");
+        modal.style.display = "none";
+    }
+
+    // Function to add schedule
+    function addSchedule() {
+        const scheduleInput = document.getElementById("scheduleInput");
+        const date = scheduleInput.getAttribute("data-date");
+        const schedule = scheduleInput.value.trim();
+
+        if (schedule !== "") {
+            const scheduleList = document.createElement("ul");
+            scheduleList.innerHTML = `<li>${schedule}</li>`;
+
+            const cell = document.querySelector(`[data-date="${date}"]`);
+            cell.appendChild(scheduleList);
+            closeScheduleModal();
+        }
+    }
+
+    // Open schedule modal when clicking on Add Schedule button
+    document.getElementById("openPopupBtn").addEventListener("click", function() {
+        const modal = document.getElementById("scheduleModal");
+        modal.style.display = "block";
+    });
+
+    // Initialize calendar with current date
+    const currentDate = new Date();
+    generateCalendar(currentDate.getFullYear(), currentDate.getMonth());
+
+    // Display current date and time
+    displayCurrentDateTime();
+
+    // Close modal when clicking on close button
+    document.querySelector(".close").addEventListener("click", closeScheduleModal);
+
+    // Add schedule when clicking on Add Schedule button
+    document.getElementById("addScheduleBtn").addEventListener("click", addSchedule);
+
+    // Close modal when clicking outside of it
+    window.addEventListener("click", function(event) {
+        const modal = document.getElementById("scheduleModal");
+        if (event.target === modal) {
+            closeScheduleModal();
+        }
+    });
+</script>
+</body>
+</html>

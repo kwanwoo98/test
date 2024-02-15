@@ -65,6 +65,7 @@ nav{
   font-weight:600;  /* 글자 굵기 */
   padding:20px 60px;  /* 패딩 */ 
 }
+
 #topMenu > li > a:hover {
   color:#1fa8f8;
   text-shadow:0 -2px #222;
