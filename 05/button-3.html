@@ -39,9 +39,11 @@
         </ul>      
         <p><b>포장 선택</b></p>
         <ul>
-          <!-- 주의사항 라디오 타입에서 name 속성으로 같은 이름으로 그룹 지어주기 -->
-          <li><label><input type="radio" value="yes">선물 포장</label></li>
-          <li><label><input type="radio" value="no">선물 포장 안 함</label></li>
+          <!-- 주의 사항, 라디오 타입에서, name 속성으로 같은 이름으로 그룹 지어주기. -->
+          <li><label><input type="radio" name="test" value="yes">선물 포장</label></li>
+          <li><label><input type="radio" name="test" value="no">선물 포장 안 함</label></li>
+          <!-- <li><label><input type="radio" name="gift" value="yes" >선물 포장</label></li>
+          <li><label><input type="radio" name="gift" value="no">선물 포장 안 함</label></li> -->
         </ul>    
       </fieldset>
       <fieldset>
@@ -69,10 +71,12 @@
           </li>     
           <li>
             <label for="memo">메모</label>
+            <!-- cols = 길이 rows = 행(높이) -->
             <textarea id="memo" cols="40" rows="4"></textarea>
           </li>   
         </ul>  
       </fieldset>
+      
       <div>
         <button type="submit">주문하기</button>
         <button type="reset">취소하기</button>
@@ -81,3 +85,5 @@
   </div>
 </body>
 </html>
+
+

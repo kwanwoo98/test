@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>WEB1 - HTML </title>
+    <meta charset="utf-8">
+    <!-- 외부 css 파일 불러오기(현재 로컬에 있는 css 파일임.) -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <h1><a href="index.html">WEB</a></h1>
+    <div id="grid">
+        <ol>
+            <li><a href="1.html">HTML</a></li>
+            <li><a href="2.html">CSS</a></li>
+            <li><a href="3.html">JavaScript</a></li>
+        </ol>
+        <div id="viewMsg">
+            <h2 onclick="toggleMessage()">HTML이란 무엇인가?</h2>
+            <p id="message"><a href="https://www.w3.org/TR/2011/WD-html5-20110405/"
+                    title="HTML5 specification">Hypertext Markup
+                    Language(HTML)</a> is the standard markup language for <strong>creating <u>web</u> pages</strong>
+                and web
+                applications.
+                Web browsers receive HTML documents from a web server or from local storage and render the documents
+                into
+                multimedia web pages. HTML describes the structure of a web page semantically and originally included
+                cues for
+                the
+                appearance of the document.</p>
+            <img id="codeImage" src="coding.jpg" alt="코딩 이미지">
+            
+            <p id="message" hidden style="margin-top: 40px;">
+                HTML elements are the building blocks of HTML pages. With HTML constructs, images and other objects such
+                as
+                interactive forms may be embedded into the rendered page. HTML provides a means to create structured
+                documents
+                by
+                denoting structural semantics for text such as headings, paragraphs, lists, links, quotes and other
+                items. HTML
+                elements are
+                delineated by tags, written using angle brackets.
+            </p>
+        </div>
+    </div>
+    <script>
+        function toggleMessage() {
+            var message = document.getElementById("message");
+            var image = document.getElementById("codeImage");
+            // 현재 표시 여부 확인
+            var display = window.getComputedStyle(message).display;
+
+            if (display === "none") {
+                message.style.display = "block"; // 보이게 변경
+                image.style.display = "block"; // 이미지를 보이게 변경
+            } else {
+                message.style.display = "none"; // 숨김 처리
+                image.style.display = "none"; // 이미지를 숨기게 변경
+            }
+        }
+    </script>
+</body>
+
+</html>
