@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+  
+   
+   <script>
+   function two() {
+   document.write('<li>2-1</li>');
+   document.write('<li>2-2</li>');
+   }
+   document.write('<li>1</li>');
+   two();
+   document.write('<li>3</li>');
+   two();
+   document.write("<h1>"+"=================="+"</h1>")
+
+   // 함수의 사용(호출)
+   // sum (1,2) , 던지는 값(인자값) arguement
+   // 함수의 정의, 받는 변수(매개변수) parameter
+   function sum (num1, num2) {
+    result = 0;
+    result = num1 + num2 ;
+    return result
+    }
+    
+
+    num1 = 2;
+    num2 = 2;
+    // 동작 여부 ? 동작함. 
+    document.write("<h1>"+"======sum (num1, num2)============"+"</h1>")
+    sum (num1, num2);
+    // 동작 여부 ? 동작함. 
+    document.write("<h1>"+"======sum (1, 2);============"+"</h1>")
+    sum (1, 2);
+    // 동작 여부 ? 동작 안함. 
+    document.write("<h1>"+"====== sum ();============"+"</h1>")
+    sum ();
+   </script>
+
+
+  <!-- 연습, 짝수 : 2,4,6,8 출력해보기. 
+  조건
+  1) while 문 사용 
+  2) if 문 사용해서, 출력해보기. 
+  3) 사칙연산에서 % 나머지를 의미하는데, 힌트, 
+  2로 나누어서 0이면,0이 아니면, 활용하기.  -->
+  <script>
+    var sampleEven = []
+    var i = 1;
+    while(i < 10 ) { // 0,1,2,3   4에서 실행이 안됨. 
+      // 
+      if(i % 2 == 0) {
+      document.write('<li>'+ i +'</li>');
+    }
+      i = i + 1;
+    }
+  </script>
+
+  <h2>점심메뉴(배열), 먹고 싶은 메뉴 5개 정해서, 반복문으로 출력해보기.</h2>
+<ul>
+
+  <script>
+    var lunchMenu = ["된장찌개","돼지국밥","칼국수","삼선우동","해장국"]
+    var i = 0;
+    while(i < lunchMenu.length ) { // 0,1,2,3   4에서 실행이 안됨. 
+      document.write('<li>'+ lunchMenu[i] +'</li>');
+      i = i + 1;
+    }
+  </script>
+</ul>
+
+  <h2>2, 3번째 코드 3번 반복</h2>
+  <script>
+    document.write('<li>1</li>');
+    // 상태 변수로, 초깃값으로 활용이 되었고, 상태 패턴. 
+    // 
+    var i = 0;
+    while (i < 3) { //i = 0,1,2,   3일 때 실행이 안됨. 
+      // 반복문안에 참일 때, 실행이 되는 문장, 결론, 3번이 실행이됨. 
+      document.write('<li>2</li>');
+      document.write('<li>3</li>');
+      // 주의사항. 상태 변수 증가 시키기.
+      i = i + 1;
+    }
+    document.write('<li>4</li>');
+  </script>
+
+  <h1>Loop : 반복문 필요성, 문제 제시</h1>
+  <ul>
+    <script>
+      document.write('<li>1</li>');
+      document.write('<li>2</li>');
+      document.write('<li>3</li>');
+      document.write('<li>4</li>');
+    </script>
+  </ul>
+
+  <h1> Array </h1>
+  <h2>Syntax</h2>
+  <script>
+    var coworkers = ["egoing", "leezche"];
+    // 배열 , [] 대괄호라고, 
+    // 객체 , {} 중괄호로 사용하고,
+    // 객체 -> json (중간데이터) , {} 중괄호로 사용하고, 
+  </script>
+  <h2>get : 배열의 요소를 가져오기. </h2>
+  <script>
+    document.write("<h2> coworkers[0] : " + coworkers[0] + "</h2>");
+    document.write("<h2> coworkers[1] : " + coworkers[1] + "</h2>");
+  </script>
+
+  <h2>count : 배열 요소의 갯수 (사이즈 , 렝스)</h2>
+  <script>
+    document.write("<h2> coworkers.length : " + coworkers.length + "</h2>");
+  </script>
+
+  <h2>add : 배열에 요소를 추가를 하는데, 배열의 뒤에 추가한다. </h2>
+  <script>
+    coworkers.push('duru');
+    coworkers.push('taeho');
+  </script>
+
+  <!-- document.querySelector('#night_day') => 사실 본인이 이미 
+  <input id="night_day" 요소인데, 똑같은 코드 또 사용하기 보다는 
+  this 로 대체를 했음.  -->
+
+  <input id="night_day" type="button" value="night" onclick="
+  if(this.value === 'night') {
+    var target = document.querySelector('body');
+    // document.querySelector('body').style.backgroundColor = 'black';
+    // document.querySelector('body').style.color= 'white';
+    target.style.backgroundColor = 'black';
+    target.style.color= 'white';
+    this.value = 'day';   
+  } else {
+    // document.querySelector('body').style.backgroundColor = 'white';
+    // document.querySelector('body').style.color= 'black';
+    target.style.backgroundColor = 'white';
+    target.style.color= 'black';
+    this.value = 'night';   
+  }
+  ">
+
+  <input id="night_day2" type="button" value="night" onclick="
+if(document.querySelector('#night_day2').value === 'night') {
+  document.querySelector('body').style.backgroundColor = 'black';
+  document.querySelector('body').style.color= 'white';
+  document.querySelector('#night_day2').value = 'day';   
+} else {
+  document.querySelector('body').style.backgroundColor = 'white';
+  document.querySelector('body').style.color= 'black';
+  document.querySelector('#night_day2').value = 'night';   
+}
+">
+
+
+  <h2>IF-true</h2>
+  <script>
+    document.write("1<br>");
+    if (false) {
+      document.write("2<br>");
+    } else {
+      document.write("3<br>");
+    }
+    document.write("4<br>");
+  </script>
+
+  <h3>1&lt;2</h3>
+  <script>
+    //document.write 의 기능은 , JS 로 HTML 에 출력하기.
+    document.write("<h1>test</h1>")
+    document.write(1 < 2);
+  </script>
+  <h3>1&lt;1</h3>
+  <script>
+    document.write(1 < 2);
+  </script>
+</body>
+
+</html>

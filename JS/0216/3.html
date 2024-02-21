@@ -4,8 +4,6 @@
 <head>
     <title>WEB1 - JavaScript </title>
     <meta charset="utf-8">
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -17,10 +15,9 @@
             <li><a href="2.html">CSS</a></li>
             <li><a href="3.html">JavaScript</a></li>
         </ol>
-
-        <div id="viewMsg">
-            <h2 onclick="toggleMessage()">JavaScript 무엇인가?<a id="clkbox">클릭</a></h2>
-            <p id="message" style="margin-top: 40px;" hidden>
+        <div id="article">
+            <h2>JavaScript 무엇인가?</h2>
+            <p style="margin-top: 40px;">
                 JavaScript (/ˈdʒɑːvəskrɪpt/),[10] often abbreviated JS, is a programming language that is one of
                 the core technologies of the World Wide Web, alongside HTML and CSS.[11] Over 97% of websites
                 use JavaScript on the client side for web page behavior,[12] often incorporating third-party
@@ -28,22 +25,6 @@
             </p>
         </div>
     </div>
-
-
-    <script>
-        function toggleMessage() {
-            var message = document.getElementById("message");
-            // 현재 표시 여부 확인
-            var display = window.getComputedStyle(message).display;
-
-            if (display === "none") {
-                message.style.display = "block"; // 보이게 변경
-            } else {
-                message.style.display = "none"; // 숨김 처리
-            }
-        }
-    </script>
-
 </body>
 
 </html>

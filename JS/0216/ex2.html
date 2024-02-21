@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1> 자스연습 </h1>
+
+    <input type="button" value="모드변환" onclick="toggleMode()">
+
+    <p style="margin-left: 30px; border-bottom: 3px;">
+        email : <input type="text" id="email">
+        <br>
+        password : <input type="password" id="password">
+        <button onclick="togglePassword('password')">보기</button>
+        <br>
+        check_password : <input type="password" id="C_password">
+        <button onclick="togglePassword('C_password')">보기</button>
+        <br>
+        name : <input type="text" id="name">
+        <br>
+        number : <input type="text" id="number">
+        <br>
+        <!-- 마지막은 만들었던 함수를 사용하는 코드임. onclick="printUserInfo()" -->
+        <input type="button" value="가입" onclick="printUserInfo()">
+        <br>
+    </p>
+    <script>
+        var isDayMode = true; // 초기 모드는 주간 모드로 설정
+
+        function toggleMode() {
+            var body = document.querySelector('body');
+            if (isDayMode) {
+                body.style.backgroundColor = 'black';
+                body.style.color = 'white';
+            } else {
+                body.style.backgroundColor = 'white';
+                body.style.color = 'black';
+            }
+            isDayMode = !isDayMode; // 모드를 반대로 전환
+        }
+
+        function togglePassword(inputId) {
+            var password = document.getElementById(inputId);
+            if (password.type === "password") {
+                password.type = "text"
+            } else {
+                password.type = "password"
+            }
+        }
+
+        function printUserInfo() {
+            var email = document.getElementById('email').value
+            var password = document.getElementById('password').value
+            var check_password = document.getElementById('C_password').value
+            var name = document.getElementById('name').value
+            var number = document.getElementById('number').value
+
+            if (!email || !password || !check_password || !name || !number) {
+                alert('모든 필드를 입력해주세요.');
+                return;
+            }
+
+            if (password !== check_password) {
+                alert('패스워드가 같지 않습니다.')
+            } else {
+                var userInfo = "이메일 : " + email + ", 패스워드 : " + password + ", 이름 : " + name + ", 전화번호 : " + number;
+                alert(userInfo);
+                alert("가입되었습니다.");
+            }
+        }
+
+    </script>
+</body>
+
+</html>

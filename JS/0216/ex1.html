@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>특정 버튼 이벤트 확인2 onchange </h1>
+
+    <!-- 계획
+      1. 입력란에 입력된 내용을 가지고 오는 방법 모색. 
+      예) document.getElementById('blogName')
+      해보니, 값이 아닌 해당 객체를 가지고 왔어요. 
+
+      객체: 수납도구. 
+      예) 가지고 오고 싶은 내용은 수납도구의 이름을 가지고 오고 싶어요. 
+
+      추가로 검색해보기. 
+      속성을 무엇을 사용해라. value . 약속. 
+      예2) document.getElementById('blogName').value
+
+      2. 가지고 온 내용을 특정 변수에 담기. 
+         var 변수를 선언하는 키워드 , message , 변수의 이름. 
+        var message = document.getElementById('change_text_input').value
+      3. 버튼을 클릭시 해당 변수를 사용하는 방법 모색.  -->
+
+    <!-- 함수를 이용하는 편. 
+      1 함수를 정의하고, 
+      2 함수를 사용을 했음.  -->
+
+    <!-- 연습해보기. 똑같은 방식으로. 
+      이메일과 패스워드 입력받는 화면을 만들고, 제출 버튼을 만들고. 
+      입력된 이메일과 패스워드를 화면에 똑같이 출력해보기.  -->
+    <!-- 1단계, 이메일을 먼저 입력받고, 출력해보기. 
+      2단계, 따로 패스워드를 입력받고, 따로 출력해보기. 
+      3단계, 한번에 2개를 다 출력해보기.  -->
+
+    <!-- 연습해보기. 
+      간단한 회원가입 폼 
+      1. 이메일 
+      2. 패스워드 
+      3. 확인용 패스워드 
+      4. 이름 
+      5. 전화번호 
+      결과는 alert 경고창에 보여주기.  -->
+
+    <input type="text" id="change_text_input">
+    <input type="button" value="변경글자 alert로 띄우기" id="change_text_btn" onclick="printMessage()">
+    <br>
+    <input type="text" onchange="alert('changed')">
+
+    <h1>특정 버튼 이벤트 확인 onclick </h1>
+    <!-- onclick 속성을 이용해서, 안에 alert 를 함수를 사용했음. 
+    alert 라는 함수는 간단히 무언가 경고를 하는 창을 띄워주는 역할. 
+    내용은. 소괄호 안에 있는 내용. : 자바스크립트, 문자열을 표기 할 때, 
+    양쪽에 작은 따옴표(''), 또는 큰 따옴표로 표기 ("") -->
+    <input type="button" value="hi" onclick="alert('hi')">
+
+    <!-- 지금은 같은 원리로 onclick 기능을 보기 위해서, 배경색을 바꾸는 테스트를 했고, 
+    차이점이, 위에는 alert이름의 함수를 이용해고, 
+    지금은, 코드를 그대로 작성했음. 
+    나중에 -> 코드 내용들을 -> 함수에 담아서 사용하고, 
+    함수에 특정 값에 따라서 동작 하게끔 변경할 예정.  -->
+    <input type="button" value="day" onclick="
+    document.querySelector('body').style.backgroundColor = 'white';
+    document.querySelector('body').style.color = 'black';
+    ">
+
+    <input type="button" value="night" onclick="
+    document.querySelector('body').style.backgroundColor = 'black';
+    document.querySelector('body').style.color = 'white';
+    ">
+
+    <h1>자바스크립트 동적, HTML 정적</h1>
+    <p style="margin-left: 30px; border-bottom: 3px
+    
+    
+    
+    ;" >
+        email : <input type="text" id="email">
+        <br>
+        password : <input type="password" id="password">
+        <button onclick="togglePassword('password')">보기</button>
+        <br>
+        check_password : <input type="password" id="C_password">
+        <button onclick="togglePassword('C_password')">보기</button>
+        <br>
+        name : <input type="text" id="name">
+        <br>
+        number : <input type="text" id="number">
+        <br>
+        <!-- 마지막은 만들었던 함수를 사용하는 코드임. onclick="printUserInfo()" -->
+        <input type="button" value="가입" onclick="printUserInfo()">
+        <br>
+    </p>
+    <script>
+        // input에서 입력된 값 가져와서, alert 출력해보기. 
+        function printMessage() {
+            // var 변수를 선언하는 키워드 , message , 변수의 이름. 
+            var message = document.getElementById('change_text_input').value
+            alert(message)
+        }
+
+        function togglePassword(inputId) {
+            var password = document.getElementById(inputId);
+            if (password.type === "password") { password.type = "text" }
+            else { password.type = "password" }
+        }
+
+        // 함수를 정의를 잘했음. -> 항상, 적용을 해야함. !!
+        function printUserInfo() {
+            // var 변수를 선언하는 키워드 , message , 변수의 이름. 
+            var email = document.getElementById('email').value
+            var password = document.getElementById('password').value
+            var check_password = document.getElementById('C_password').value
+            var name = document.getElementById('name').value
+            var number = document.getElementById('number').value
+            // 문자열을 연결하는 연산자, "+" 
+            if (password === check_password) {
+                var userInfo = "이메일 : " + email + ", 패스워드 : " + password + "이름 : " + name + "전화번호 : " + number
+                alert(userInfo)
+                alert("가입되었습니다.")
+            }
+            else {
+                alert('패스워드가 같지 않습니다.')
+            }
+        }
+
+        document.write(1 + 1);
+    </script>
+    <h1>1+1</h1>
+</body>
+
+</html>
