@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <h1>Hello</h1>
+
+
+
+  <script>
+    // 객체 형식으로, get , set , 연습해보기. 
+    var coworkers = {
+      "programmer": "egoing",
+      "designer": "leezche"
+    }
+
+    // 객체의 키로  해당 값 가져오기 연습
+    document.write("coworkers의 키 programmer 로 해당 값 가져오기 :  " + coworkers.programmer)
+
+    document.write("<br>")
+    // 추가로 값 넣기. 
+    coworkers.test = "lsy"
+
+    // 객체의 키로  해당 값 가져오기 연습
+    document.write("coworkers의 키 test 로 해당 값 가져오기 :  " + coworkers.test + "<br>")
+
+    // 추가로 값 넣기2, 해당 변수가 띄어쓰기가 포함이 될 때. 
+    coworkers["test data"] = "lsy data";
+
+    // 객체의 키로  해당 값 가져오기 연습
+    document.write("coworkers의 키 test data 로 해당 값 가져오기 :  " + coworkers["test data"] + "<br>")
+
+    // 객체와 반복문을 이용해보기, for 향상된 for문이라고해서, in 키워드를 이용해서. 
+    // 해당 복수개에서, 하나씩 꺼내서, 사용해보기. 
+    // 기본 문법 구조 : for ( 변수 in 복수개(객체,배열등))
+    // 동작 방식은, 복수개에서 하나씩 꺼내서, 변수에 담기. 
+    for (var key in coworkers) {
+      document.write('coworkers 객체의 모든 key 조회, for 문으로 해당 키에 속성 가져오기 : ' + key + '<br>');
+    }
+    // 객체의 키로 해당 value 값 조회하기. 
+    for (var key in coworkers) {
+      document.write('coworkers 객체의 모든 value 조회, for 문으로 해당 키로 값 가져오기 : ' + coworkers[key] + '<br>');
+    }
+
+    // 키 와 값 모두 출력. 
+    for (var key in coworkers) {
+      document.write('coworkers 객체의 모든 키와 값 조회 : ' + key + ' : ' + coworkers[key] + '<br>');
+    }
+
+    // 객체에 함수를 설정(set)
+    coworkers.showAll = function () { // 익명함수, 함수이름 없다, 그래서, 일회용 사용하고, 
+      // 보통 변수에 담아서, 정의 및 사용을 한다. 
+      // 나중에 화살표 함수로 확장시에도 사용을 한다. 
+      // 화살표 함수 기본 문법 :  (매개변수) => {실행될 내용}
+      // for (var key in coworkers) { // coworkers -> this로 대체 가능. 
+      //   // 이유는 현재 함수의 부모의 요소가 coworkers 때문에, 결론, 자기자신이다. 
+      //   document.write('객체에 함수로 set,get 예시 : '+key + ' : ' + coworkers[key] + '<br>');
+      // }
+      // this 버전. 
+      for (var key in this) { // coworkers -> this로 대체 가능. 
+        // 이유는 현재 함수의 부모의 요소가 coworkers 때문에, 결론, 자기자신이다. 
+        document.write('객체에 함수로 set,get 예시 : ' + key + ' : ' + this[key] + '<br>');
+      }
+    }
+
+    // 객체에 있는 함수 이용 요거는 많이 했음. 사용법 
+    coworkers.showAll();
+
+    // 출력시, key에 showAll 정체는 함수 임. 
+    // 그래서, 반복문으로 출력시, showAll 같이 출력이 되어서, 다 나온다. 
+
+    //간단한 자바스크립트(바닐라:기본), 확인시 
+    // 크롬 웹브라우저에서 ctrl + shift + j , 콘솔에서 확인도 가능. 참고.
+    // 다음줄 로 넘길 때, ctrl + enter 
+
+    // vscode 에서, 기본 포트 : 5500 번 사용중이었고,
+    // 그런데, 무슨 일인지 모르지만? 다른 프로세스에 해당 포트를 또 사용을해서, 
+    // 중복이 되니, 윈도우즈가 어느 포트를 선택 해야 할지, 선택 장애가 옴. 
+    // 그래서, 라이브 서버의 기본 포트 5500을 임시로 7777 로 변경. 
+    // 설정 -> port number -> setting.json 클릭 하고, 
+    // 추가로 코드 :  "liveServer.settings.port": 7777
+    // 재시작. vscode 끄고, 다시 시작. 
+
+    sum(1, 2)
+    sum(2, 3)
+
+    function sum(left, right) {
+      // document.write(left + right + '<br>');
+      return left + right
+    }
+
+    // 주의사항, 문자열 표기시, 작은 따옴표 (') , 또는 큰 따옴표 (")
+    // 안에 작성하고, 문자열 내부에 또 문자열이 온다면
+    // 예) "   '안에는 작은 따옴표'  " 
+    // 예2) '   "안에는 큰 따옴표"  '
+    function sumColorRed(left, right) {
+      // 사칙 연산에서 + (더하기) 차례대로 진행이 되는데, 
+      // 먼저 문자열을 먼저 + 사용시 이때는 연결 연산자로 사용이 되어서, 
+      // 더하기 전에 문자열로 변경이 됨. 문제. 
+      // 그래서, sum 이라 함수를 return 키워드 이용해서, 재사용을 했음.  
+      // document.write('<div style="color: red;">' +'<h1>'+ left + right +'</h1>'+ '</div><br>');
+      document.write('<div style="color: red;">' + '<h1>' + sum(left, right) + '</h1>' + '</div><br>');
+    }
+
+    sum(2, 3);
+    sumColorRed(100, 200);
+  </script>
+</body>
+
+</html>

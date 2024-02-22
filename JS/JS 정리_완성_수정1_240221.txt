@@ -61,11 +61,33 @@ night 버튼을 누르면 <body> 태그가 어떻게 바뀌는지 확인.
         document.querySelector('body').style.backgroundColor = 'black';
         document.querySelector('body').style.color = 'white';
         ">
+		
+		자바스크립트에서, 일단 여러분들이 배워야 할게 너무 많은데. 
+		  프로그래밍 언어 
+		    1. 변수 
+			2. 연산자
+			3. 조건문(if), 반복문(for)
+			4. 클래스 
+			5. 함수 
+			6. 내장 클래스 (내부 기능)
+		프로그래밍 언어 배우는 순서 
+		C > C++ > C# > 자바(보수적)예 코드길이 10줄 > 
+		자바스크립트 예 코드길이 6줄> 파이썬 예 코드길이 4줄(기회가 된다면) 
+		
+		객체 : 수납도구 (속성 > 변수, 함수 등 )
+		. : 닷연산자.(하위로 연결하는 구분자처럼 사용한다. 
+			탐색기 예) 폴더: 문서>web>html
+			cmd 예) 폴더: 문서\web\html 
+			자바스크립트에서 , 객체에서 특정의 폴더에 접근할 때. 
+			document.querySelector('body').style
+			
     
         <input type="button" value="day" onclick="
         document.querySelector('body').style.backgroundColor = 'white';
         document.querySelector('body').style.color = 'black';
         ">
+		
+		
 <body> 밑에 복사해서 확인 해보기. 
 
 day 버튼을 누르면 이렇게 변경됨. 
@@ -231,6 +253,7 @@ onclick 속성이 위치하고 있는 태그를 사용자가 클릭 했을 때
 결과 확인. 
 입력 창에, 글자를 입력하고 엔터를 누르면 창이 뜸. 
 변경이 있을 때만,
+
 변경이 없을 때 엔터 하면 하면 창이 안뜸. 
 
 만약, 사용자가 어떤 키를 눌렀을 때 이벤트가 발생하도록 만들고 싶다면 
@@ -249,10 +272,14 @@ onclick 속성이 위치하고 있는 태그를 사용자가 클릭 했을 때
 
 수업의 주인공은 on 으로 시작하는 속성. 
 자바스크립트에서 이벤트라고 함. 
+
 이것들을 이용해 사용자와 상호작용할 수 있는 코드를 작성.
+
 메인 예제로 돌아와 night , day 가 어떻게 작용하는지 일부분 알게 됨. 
+
 즉, input 태그 속성에 onclick 속성이 들어 있고, 
-아직 100% 이해하지는 못하지만 속성 값으로 자바스크립트 코드가 들어 있고 
+아직 100% 이해하지는 못하지만 
+속성 값으로 자바스크립트 코드가 들어 있고 
 덕분에 실행되는 것을 알수 있음. 
 ------------------------------------------------------------------------ 
 제목 
@@ -280,7 +307,8 @@ alert('Cascading Style Sheets (CSS) is a style sheet language used for describin
 주의사항,
 글자 잘 붙여서 넣기. 
 
-콘솔을 이용하면 자바스크립트 코드를 즉석에서 실행 가능. 
+콘솔을 이용하면 자바스크립트 코드를 즉석에서 실행 가능.
+ 
 이 콘솔에서 실행하는 자바스크립트 코드는 지금 우리가 보고 있는 웹 페이지 안에 삽입돼 있는 
 자바스크립트 인 것처럼 동작함. 
 다시 말해, 콘솔에서 실행하는 자바스크립트 코드는 이 웹 피이지를 대상으로 실행된다는 것.
@@ -306,7 +334,9 @@ https://developer.mozilla.org/ko/docs/Web/JavaScript/Data_structures
 
 6개 데이터 타입이 있고, 객체가 있음.
 내용 전체를 알 필요는 없음. 
-숫자(Number)와 문자열(String) 이라고 하는 비교적 익숙한 데이터 타입이 무엇인가를 파악해보고,
+숫자(Number)와 문자열(String) 이라고 하는 비교적 익숙한 
+
+데이터 타입이 무엇인가를 파악해보고,
 각 데이터 타입의 성격을 살펴보기. 
 검사 -> 콘솔 탭 선택. 
 이곳에서 숫자 표현 하기. 
@@ -320,7 +350,7 @@ alert 귀찮으니 그냥 숫자로
 문자열은 따옴표("")로 이루어짐. 작은 따옴표 무방. 
 주의, 시작이 큰 따옴표이면 끝도 큰 따옴표. 
 
-문자열의 기능들 살펴보기. 
+문자열의 기능들 살펴보기. -> 
 검색 : JavaScript String
 https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/String
 
@@ -361,6 +391,9 @@ test.jpg, test2.mov
 "1" 은 문자열. 
 1+1 -> 2
 "1" + "1" -> "11" 
+"1" + 1 -> "11"
+문자 + 숫자 -> 문자 
+"1" + "1" + 1 + 2
 항상 데이터 타입을 정확하게 표현하는 것에 대해 관심을 가질 필요가 있음. 
 
 ------------------------------------------------------------------------ 
@@ -373,7 +406,7 @@ test.jpg, test2.mov
 x = 1;
 
 y = 1;
-x +y ;
+x + y ;
 x= 1000;
 x+y;
 
@@ -382,11 +415,12 @@ x : 변수(variable).
 오른쪽 항에 있는 값을 왼쪽에 있는 변수에 대입하는 역할을 함. 
 다른 특징 
 좌항과 우항을 결합해서 우항의 값을 만들어 냄. 
-x=1;
-x+=1;
-->2 
+x = 1;
+x += 1;
+x = x + 1;
+-> 2 
 
-1=2; -> 에러남
+1 = 2; -> 에러남
 대입 연산자를 통해 값이 바뀔 수 있다는 뜻에서 변수. 
 1은 언제나 1이기 때문에 바뀌지 않는다는 점에서 상수(constant)
 
@@ -397,16 +431,21 @@ x+=1;
 
 변수의 위력을 느낄 수 있는 불완전한 예제 소개. 
 
+변수 사용 vs 변수 사용 안할 때 ->
+1타 3피 표현. -> css 캐스케이딩, 폭포, 위 -> 아래
+
+class : 10개 중 5개를 선택시, , id ,
+
 아무 의미 없는 문자열 
 
-" abcd egoing abcd egoing abcd egoing"
+" abcd egoing2 abcd egoing2 abcd egoing2"
 항상 극단적인 생각해야 함. 
 'egoing'이 3개가 아닌 1억개가 있다고 가정. 
 이 글 안에 있는 'egoing' -> 'leezche' 로 바꿔야 한다면?
 힘들다. 
 그래서, name 이라는 변수 사용. 
 
-var name = 'egoing';
+var name = 'egoing2';
 " abcd egoing abcd egoing abcd egoing"
 ->
 " abcd  " + name +  " abcd  " + name +  " abcd  " + name 
@@ -521,6 +560,15 @@ https://www.w3schools.com/jsref/prop_style_backgroundcolor.asp
 주의 사항 속성 추가 후 , onclick 큰 따옴표로 닫고, 세미콜론 표시하고, 닫는 태그 확인.
 
         <input type="button" value="night" onclick="
+		// document 객체 하위에 속성 중에 
+		// querySelector 함수에 인자값으로 : body 이용했고, 
+		-> body 라는 태그를 선택한 결과 와 같습니다. 
+		
+		// 들어가보니 다시 속성 style 이 있고, 
+		// 어가보니 다시 속성  backgroundColor 
+		// backgroundColor =  'black';
+		-> body 라는 태그의 배경색을 검정으로 변경했네.
+		
         document.querySelector('body').style.backgroundColor = 'black';
 배경만 변경.        
         document.querySelector('body').style.color = 'white';
@@ -531,37 +579,66 @@ https://www.w3schools.com/jsref/prop_style_backgroundcolor.asp
         document.querySelector('body').style.backgroundColor = 'white';
         document.querySelector('body').style.color = 'black';
         ">
+		
+		    <input type="button" value="day" onclick="colorChange()">
+		
+		function colorChange() {
+		document.querySelector('body').style.backgroundColor = 'white';
+        document.querySelector('body').style.color = 'black';
+		}
+		
+		
 자바스크립트로 할수 있는 가장 중요한 일은 사용자와 상호작용해서 
 HTML 과 CSS를 프로그래밍적으로 동적으로 변경. 
 좀 더 단순하게 만드는 테크닉 살펴보기
 ------------------------------------------------------------------
 제목 13
+-> 절차 지향적인 프로그래밍, 약속기반,  규칙기반
+시간의 순서대로, 위에서, 차례대로 내려오면서 실행이 된다. 
+
 프로그램, 프로그래밍 , 프로그래머 
 
 이론적. 보편적인 의미. 
-HTML 과 자바스크립트는 둘다 컴퓨터 언어입니다. 
+HTML 과 자바스크립트는 둘다 컴퓨터 언어입니다.
+ 
 자바스크립트 컴퓨터 언어 또는 컴퓨터 프로그래밍 언어라고 하지만, 
 HTML 은 컴퓨터 프로그래밍 언어라고 하지 않습니다. 
+
 프로그램이라는 말의 의미. 
-프로그램 어원 -> 음악회 같은 경우 시간의 흐름에 따라 음악이 연주되는 순서. 이 순서.
+프로그램 어원 -> 음악회 같은 경우 
+시간의 흐름에 따라 음악이 연주되는 순서. 
+이 순서.
 단어의 중심에는 순서라는 의미. 
+
 이 순서를 만드는 행위를 프로그래밍. 만드는 사람 프로그래머.
+
 프로그램, 프로그래밍, 프로그래머란 말은 소프트웨어뿐만 아니라 아주 많은 분야에서 사용되는 말. 
 
-컴퓨터로 와서 어떤 일 할 때 그 기능 중 하나만 필요한 경우는 거의 없음. 
-어떤 의도에 따라 순서대로 여러 기능을 작동 시키는 것이 일반적인 컴퓨터 사용 방법. 
-시간 순서에 따라 실행돼야 할 기능을 프로그래밍 언어의 문법에 맞게 글로 적어두는 방식을 고안. 
+컴퓨터로 와서 어떤 일 할 때 
+그 기능 중 하나만 필요한 경우는 거의 없음. 
+
+어떤 의도에 따라 순서대로 여러 기능을 작동 시키는 것이 
+일반적인 컴퓨터 사용 방법. 
+
+시간 순서에 따라 실행돼야 할 기능을 
+프로그래밍 언어의 문법에 맞게 글로 적어두는 방식을 고안. 
+
 이것을 컴퓨터에게 시킴. 프로그램의 본질이라 생각됨. 
 
 HTML 시간 순서에 따라 무엇을 할 필요가 없음. 
+
 하지만, 자바스크립트는 사용자와 상호작용 하기위해 고안됨. 
 시간 순서에 따라 웹 브라우저의 여러 기능이 실행돼야 하기 때문에. 
 
 사람 욕심 많음. 
 처음에 단순히 시간을 나열 -> 조건에 따라 다른 순서에 기능 실행 
 -> 반복해서 기능 실행 
-욕심을 충족하기 위해 성취한 위대한 업적들을 따라가며 컴퓨터 프로그래밍 언어라면 
-어떤 언어든 가리지 않고 가지고 있는 핵심적인 기능들인 
+
+욕심을 충족하기 위해 성취한 위대한 업적들을 따라가며 
+컴퓨터 프로그래밍 언어라면 
+어떤 언어든 가리지 않고 가지고 있는 
+
+핵심적인 기능들인 
 조건문, 반복문, 함수 등을 살펴보기.
 
 ------------------------------------------------------------------------ 
@@ -571,7 +648,8 @@ HTML 시간 순서에 따라 무엇을 할 필요가 없음.
 중요함. 
 조건에 따라 순서의 기능들이 실행되게 하는 것.
 프로그래밍이란 것을 통해 반복적인 일을 하지 않게 됐다면 조건문이라는 것은 단순한 
-반복문이 아니라 아주 복잡한 업무에서도 우리가 해방되게 하는 아주 혁명적인 도구. 
+반복문이 아니라 
+아주 복잡한 업무에서도 우리가 해방되게 하는 아주 혁명적인 도구. 
 
 night , day 버튼 2개 불만족으로 가정. 
 
@@ -585,14 +663,33 @@ night , day 버튼 2개 불만족으로 가정.
 
 예제 코드 
 
+if (조건식) {
+	조건식 true , 참일 경우 실행이 될 문장
+} else {
+	조건식 false , 거짓일 경우 실행이 될 문장
+}
+
+= : 대입 연산자 
+x = 1 ;
+== : 등위 연산자. 
+x = 2
+x == 1 : 결과, false
+
+=== : 일치(데이터 형도 같이 비교)연산자 
+예) 
+x = 1;  숫자
+y = "1"; 문자열 
+x === y ; 결과 : false
+x == y : 결과 : true
+
       <input id="night_day" type="button" value="night" onclick="
       if(document.querySelector('#night_day').value === 'night') {
           document.querySelector('body').style.backgroundColor = 'black';
-        document.querySelector('body').style.color= 'white';
+        document.querySelector('body').style.color = 'white';
         document.querySelector('#night_day').value = 'day';   
       } else {
         document.querySelector('body').style.backgroundColor = 'white';
-        document.querySelector('body').style.color= 'black';
+        document.querySelector('body').style.color = 'black';
         document.querySelector('#night_day').value = 'night';   
       }
       ">
@@ -668,6 +765,8 @@ https://miaow-miaow.tistory.com/56
   
   <h3>1&lt;2</h3>
   <script>
+	//document.write 의 기능은 , JS 로 HTML 에 출력하기.
+	document.write("<h1>test</h1>")
     document.write(1<2);
   </script>
   <h3>1&lt;1</h3>
@@ -791,7 +890,7 @@ ex3.html
 
 ----------------------------------------------------------
 제목 
-18 중복의 제거를 위한 리팩터링 
+18 중복의 제거를 위한 리팩터링 -> 중복제거 (전반적인 코드의 이해도가 있어야.)
 리팩터링
 : 단어에서 팩터리는 공장이며, 리는 다시라는 뜻이므로 
 공장으로 다시 보내 개선한다는 정도. 
@@ -891,7 +990,8 @@ target 변수를 쓰는 모든 코드가 한 번에 바뀌는 폭발적인 효�
 조건문을 어디에 쓰는지 조건문의 실용적 사례를 살펴봄. 
 ------------------------------------------------------------
 제목 
-19 반복문 예고 
+19 반복문 예고 -> 조건문에 이어서, 반복문도 많이 사용이 됨. 
+
 자바스크립트의 새로운 문법을 살펴보기 위해 기존 예제에서 불만족스러운 부분 찾아보기. 
 우선, night 버튼을 누르면 링크들이 너무 어두움. 
 반면 밝은 색으로 바뀌었을 때는 링크가 선명함. 
@@ -912,10 +1012,41 @@ day 버튼을 클릭하면  'blue' 색상이 적용됨.
 대략적인 내용은 
 이 웹 페이지의 모든 <a> 태그를 가져오고,
 <a> 태그 하나하나에 대해 반복적으로 powderblue 색상을 지정하는 것. 
+
+변수에는, 
+1)낱개도 할당이되고, 
+2)복수개 여러개도 할당이 됨. 
+3)객체도 할당이 됩니다. 
  <script>
+
+// 반복문, 
+// 기본 for : 순서가 있어서, 차례대로 무언가 반복할 때. 
+//기본 문법 
+//for ( i=0 ; i<10; i++) {
+
+//} 
+
+// while ( 특정 조건에 따라서, 계속 반복할지 여부가 나뉘어지고)
+//while ( 조건식 ) {
+
+//}
+
+ //	모든 a 태그 요소를 다 가져오기. 배열에 담기. 
+ // 배열 var alist = [ ]
+ // 가급적 담을 때는 , 같은 요소로 담는(같은 모델) 방식을 추천. 
+ // 여러 개를 담을 때, 모델별로 정리가 되었다면, 한방에 담아도 됩니다. 
+ 
         var alist = document.querySelectorAll('a');
+ // 상태 변수, 활용은, 초깃값으로 활용. 		
         var i = 0;
+		// 여러 개를 담은 변수의 갯수를 파악이 가능함. 
+		// alist.length , 총수량. , 배열의 길이 
         while ( i < alist.length) {
+		// i , index 순서, 0 부터 시작. 
+		//    인덱스 
+		//				0		1	2		3
+		// alist = [a요소1, a요소2,a요소3,a요소4]
+		// alist[0] ->a요소1 
             alist[i].style.color = 'powderblue';
             console.log(alist[i]);
             i = i + 1 ;
@@ -926,7 +1057,7 @@ day 버튼을 클릭하면  'blue' 색상이 적용됨.
 먼저 배열, 배열을 이용해 반복적인 작업을 처리 하기 위한 반복문 보기. 
 ------------------------------------------------------
 제목 
-20 배열 
+20 배열 -> 여러 개 를 담을려고(팁!, 어떻게 담아라? 같은 타입으로)
 
 배열이 왜 필요한가? 
 반복문에서 배열이 왜 필요한지는 이해하기 쉬움. 
@@ -983,11 +1114,8 @@ coworkers[0] 이라고 쓰면 -> egoing 나옴.
   <script>
     var coworkers = ["egoing", "leezche"];
   </script>
-  <h2>get</h2>
-  <script>
-    document.write(coworkers[0]);
-    document.write(coworkers[1]);
-  </script>
+  
+  
 
 첫 번째 자리에 있는 값은 0번째라는 뜻. 
 이를 인덱스(index)라고 함. 
@@ -1048,6 +1176,20 @@ https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Ar
 
 ---------------------------------------------------------
 제목 
+
+반복이 되는 코드 들이 조금씩 눈에 들어오는데, 
+디자인 패턴. -> 자바 기반으로, 고프 
+종류가 . 
+a. 반복 패턴. (배열과 같이 사용을 많이 한다.)
+b. 전략 패턴. (중복이 되는지 안되는 지 분리 작업)
+c. mvc 패턴. -> spring 의 기본 패턴. 
+모델 , 뷰, 컨트롤러 
+d. 데코레이션 패터. -> 나중에 자바 등에, 
+파일의 IO(Input Output)의 내장함수들이 많이 사용함
+
+1) 배열(컬렉션) 조합 반복문 -> 반복 패턴. 
+
+
 21 반복문 
 
 반복문(루프라고도 함.)에 대해 살펴봄. 
@@ -1076,6 +1218,7 @@ ex7.html
 </html>
 
 위에서부터 아래로 순서대로 코드를 실행하는 것이 
+
 프로그램의 기본적인 실행 순서. 
 필요에 따라서는 2번째와 3번째로 실행돼야 하는 명령을 
 여러 번 반복해야 할 경우가 있음. 
@@ -1098,6 +1241,10 @@ true, false 중에서
 while 괄호 안의 내용이 true 인 동안에는 while 문 안의 코드가 
 반복적으로 실행. 
 언제까지 실행? while 괄호 안의 내용이 false가 될 때까지.
+
+while (조건식) {
+	참일 경우 , 반복적으로 실행이 되는 문장. 
+}
 
 순서 
 while 문 실행 -> true/false 상태 봄 -> true 면 중괄호 안에 있는 
@@ -1140,7 +1287,8 @@ i = 3 일 때, 빠져 나옴.
 
 ------------------------------------------------
 제목 
-22 배열과 반복문 
+22 배열과 반복문  -> 반복 패턴. 
+
 배열과 반복문을 함께 활용해 각각의 개념과 기능이 결합해서
 어떤 강력한 시너지를 내는지 살펴봄. 
 
@@ -1310,6 +1458,9 @@ document.querySelectorAll('a');
 
 모든 <a> 태그를 가져와서 alist 변수에 넣고 출력하기 
 
+// alist -> 배열 , 
+확인 할 때, 
+typeof(alist) => object 객체이더라.
 var alist = document.querySelectorAll('a');
 console.log(alist[0]);
 console.log(alist[1]);
@@ -1407,10 +1558,19 @@ i = i + 1;
 
 ------------------------------------------
 제목 
-24 함수 예고 
 
-함수라는 도구를 살펴보자. 
+패키지(라이브러리) -> 클래스들의 모음집.  
+
+클래스라는게 -> 함수들의 묶음 + 속성(변수)
+
+24 함수 예고 -> 반복이 되는 코드를 재사용하기 위해서 사용. 리팩토링. 
+예) alert() , : 웹 브라우저에서, 창을 띄워 주는 역할. 
+기능이 코드로 약 10줄.
+
+함수라는 도구를 살펴보자.
+ 
 영어로 function -> 떠오르는 이미지는 수납상자. 
+
 코드가 많아지면 그 코드를 잘 정리 정돈하기 위한 도구.
 아주 간다하며 강력한 도구가 함수이고, 그것보다 좀 더 큰 도구는 객체.
 객체는 나중에.
@@ -1435,6 +1595,10 @@ var target = document.querySelector('body');
             target.style.color = 'white';
             this.value = 'day'
 
+			// css 작업은 보통은 거의 선택자로 작업을 거의 다하고, 
+			// 밑에는 자바스크립트로 특정 요소에 접근을 해서, 
+			// 뭔가, 이벤트(액션),예 색깔을 변경한다거나, 데이터 전달 하거나. 
+			// 크롤링에서, 특정의 데이터를 자동으로 수집하거나 등. 
             var alist = document.querySelectorAll('a');
             var i = 0;
             while ( i < alist.length) {
@@ -1466,9 +1630,18 @@ function이라는 키워드를 붙이기.
 
 지금 당장 중요하지 않지만 
 function nightDayHandler(self) 라고 바꾸기. 
-함수 안에서 this -> self 로 변경. 
 
-function nightDayHandler(self) {
+함수 사용(함수 이름으로 접근) : nightDayHandler(this) // this, 인자값 의미
+// 인자값을 던지는 변수, 어디로 던지나요? 함수가 정의가 된곳으로 던집니다.
+// 매개변수 라는 포수에게 던집니다. 
+// this 는 뭐 의미한다. input tag 
+// 왜? 현재 함수는 input 이라는 태그의 onclick 속성으로 현재 사용중이라서, 
+// 부모 태그가 input 입니다. 
+
+함수 안에서 this -> self 로 변경. 
+// 함수 정의, 호출?, 정의. 
+function nightDayHandler(self) { // self , 받는 변수, 매개 변수 
+
 var target = document.querySelector('body');
         if (self.value === 'night') {
             target.style.backgroundColor = 'black';
@@ -1524,14 +1697,29 @@ nightDayHandler()라는 함수를 실행하라는 뜻.
 
 이론적으로 정리하는 시간.
 영어로 function이라 하고 
+
 객체를 배우면 똑같은 함수를 메서드라고 부르는 경우도 있다. 
 일단 함수만 기억해보자. 
-기본 문법 배우고 매개변수(parameter)와 인자(argument)를 
+기본 문법 배우고 매개변수(parameter) 포수에 비유 
+와 인자(argument) 투수로 비유를 
+
+함수의 동작은
+1) 특정의 기능이 실행후 종료, 
+
+function sum(a, b) { //함수가 정의된 부분에 소괄호 안에 변수 이름: 매개변수.
+	console.log(a+b)
+}
+
+2) 특정의 기능이 실행 후, 다시 결괏값 내보내기. 
+
 배우고, return 키워드 배우면 끝. 
 function sum(a, b) { //함수가 정의된 부분에 소괄호 안에 변수 이름: 매개변수.
  return a+b
 }
 사용 할 때, 
+결괏값을 새사용 한다면. 
+var result = sum(1,2) // 현재, result 변수에는 값이 ? 3
+
 sum(1,2); // 1,2 이부분의 인자. -> 함수를 호출한다. call 
 
 새파일 : ex9.html 만들기. 
@@ -1580,6 +1768,7 @@ sum(1,2); // 1,2 이부분의 인자. -> 함수를 호출한다. call
 함수가 등장 했기 때문에 function 을 적기. 
 그리고 함수의 이름을 웹 브라우저에게 알려줌. 
 여기서 two 라고 지정. 
+
 중괄호 안에 반복되는 , 즉 재사용하고 싶은 코드를 붙여 넣기. 
 
 function sum (num1, num2) {
@@ -1591,8 +1780,8 @@ function sum (num1, num2) {
  num1 = 2;
  num2 = 2;
  
- sum (num1, num2);
- sum (1, 2);
+ var result1 = sum (num1, num2);
+ var result2 = sum (1, 2);
  sum ();
 
 <script>
@@ -1734,6 +1923,10 @@ sumColorRed()
 function sum(left, right) {
  document.write(left+right+'<br>');
  }
+ // 주의사항, 문자열 표기시, 작은 따옴표 (') , 또는 큰 따옴표 (")
+// 안에 작성하고, 문자열 내부에 또 문자열이 온다면
+// 예) "   '안에는 작은 따옴표'  " 
+// 예2) '   "안에는 큰 따옴표"  '
 function sumColorRed(left, right) {
 document.write('<div style="color: red;">' + left+right+'</div><br>');
 }
@@ -1910,8 +2103,13 @@ this 라는 인자를 self 라는 매개변수로 받는다.
 --------------------------------------------------------------
 제목 
 29 객체 예고 
-새로운 도구 도입. -> 객체(object).
-객체는 중요하지만, 엄청 어려움. 프로그래밍 배울 때 큰산 2개. 
+새로운 도구 도입. -> 객체(object). -> 수납도구 (속성과 함수들을 가지고 있다.)
+예) 폴더에서, 또 다른 폴더에 접근시, 사용되는 구분자 종류. 
+탐색기 (>), cmd 명령어창(\), (.) 닷연산자
+예) document.
+
+객체는 중요하지만, 엄청 어려움. 프로그래밍 배울 때 큰산 2개.
+ 
 함수, 객체. 
 객체는 함수라는 기반 위에 객체라는 것이 존재. 지금 까지 배운 내용의 심화 내용. 
 객체의 여러 얼굴 중 딱 하나만 소개.
@@ -1928,9 +2126,19 @@ this 라는 인자를 self 라는 매개변수로 받는다.
 중복된 코드 함수로 독립 시키기. 
 
 중복되는 코드 
+//document.querySelectorAll('a');
+// document라는 객체의 속성 들 중에서, 함수를 사용했고, 
+// 그 함수는 결괏값을 내보내기를 합니다. 
+// 결과, a 태그 4개를 결과로 내보내기를 했다. 
+
 var alist = document.querySelectorAll('a');
+			0		1		2	  3
+// alist = [a태그1,a태그2,a태그3,a태그4,]
 var i = 0;
 while ( i < alist.length) {
+		//alist[0]. , 객체에서 속성에 접근하기. 
+		// alist[0].style.color , 닷 연산자로 해당 객체에 속성에 접근중. 
+		// 대입 연산자를 이용해서, 값을 할당. (set 한다. 설정.) 
 		alist[i].style.color = 'powderblue';
 		console.log(alist[i]);
 		i = i + 1;
@@ -2022,6 +2230,11 @@ document.querySelector('body').style.color = color;
 마찬가지 target.style.backgroundColor = 'black';
 이 코드 함수화 하기. 
 함수 이름 :BodySetBackgroudSetColor()
+
+
+function BodySetColor(color) {
+document.querySelector('body').style.color = color;
+}
 
 function BodySetBackgroudSetColor(color) {
 document.querySelector('body').style.backgroundColor = color;
@@ -2119,6 +2332,9 @@ coworkers[1];
 이름 있는 정리 정돈 상자 -> 객체. 
 
 객체 문법. 
+배열 : [] 기호 사용 
+객체 : {} 기호 사용 할 예정. 
+
 <script>
  var coworkers = {
  
@@ -2129,13 +2345,16 @@ coworkers 라는 변수에 객체를 담을 예정.
 배열은 대괄호, 객체는 중괄호 사용. 
 현재 빈 객체. 
 객체에 "egoing" 이라는 정보 넣기. 
+
+객체 안에 내용의 형태는 , key : valeu 의 형태. 
+
 "programmer" : "egoing"
 "designer" : "leezche"
 
 <script>
  var coworkers = {
  "programmer" : "egoing",
-"designer" : "leezche"
+ "designer" : "leezche"
  }
 </script>
 
@@ -2171,7 +2390,7 @@ coworkers.data scientist = "taeho";
 추가
 coworkers["data scientist"] = "taeho";
 가져오기 
-document.write("data scientist : " + coworkers["data scientist"] + "<br>");
+document.write("data scientist : " + test data + "<br>");
 호출시  객체 이후에 점 제거하고 사용하기. 
 
 객체의 기본적인 생성법과 객체의 데이터를 가져오는 법, 객체에 데이터를 넣는 법 봤음. 
@@ -2188,6 +2407,12 @@ https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Statements/for...
 
 for .. in 을 쓰라고 나옴. 
 이 내용을 토대로 coworkers 의 모든 객체를 꺼내서 화면에 출력하는 코드. 
+
+기본 for 문 
+for ( 초깃값; 조건식 ; 증감 연산자 {
+}
+예) for ( var i = 0 ; i < 10 ; i++) {
+}
 
 <h2>Iterate</h2>
 <script>
@@ -2256,7 +2481,7 @@ for (var key in coworkers) {
 지금까지 객체의 데이터를 순회하는 방법을 살펴봄. 
 ---------------------------------------------------------
 제목 
-32 객체 프로퍼티와 메서드 
+32 객체 프로퍼티(property : 속성) 와 메서드(method = 함수) 
 객체는 데이터를 담을 수 있음. -> 변수, 함수,  객체 -> 정리 할수 있는 수납 공간으로 설명 중.  -> 중복 제거. -> 리팩토링.
 문자열, 배열, 숫자, 함수도 담을수 있음. 
 
@@ -2265,7 +2490,11 @@ ex10.html
 
 <h2>Property & Method</h2>
 <script>
-coworkers.showAll = function() {
+// 현재 function 뒤에 함수명이 없는 것을 , 익명함수(이름이 없어서)
+// 보통, 일회용으로 사용할 때, 또는 간단히 쓸때 사용함. 
+// 익명 함수에서 -> 화살표 함수를 사용이 가능함. ( 자바, 람다식(화살표 함수))
+coworkers.showAll = function() { // 익명함수 
+	// 익명함수 이기때문에, 바로 특정 변수에 할당을 함. 
 
 }
 </script>
@@ -2277,6 +2506,7 @@ showAll() 함수에 있는 코드를 showAll 메서드에 붙여넣기.
 
 <h2>Property & Method</h2>
 <script>
+// 객체에 함수를 설정(set)
 coworkers.showAll = function() {
  for(var key in coworkers) {
 	document.write(key + ' : ' + coworkers[key] + '<br>');
@@ -2285,6 +2515,7 @@ coworkers.showAll = function() {
 </script>
 
 showAll() 메서드 호출 
+// 객체에 있는 함수 이용 요거는 많이 했음. 사용법 
 coworkers.showAll();
 
 <h2>Property & Method</h2>
@@ -2576,7 +2807,22 @@ colors.js 라는 파일을 만들기.
 쪼개는 것이 훨씬 더 효율적. 돈, 시간 적게 드는 방법. 
 ---------------------------------------------------------------
 제목 
-35 라이브러리와 프레임워크 
+35 라이브러리
+(언어에 내장된 기본 라이브러리(기능모음집)
+예) 문자열에 포함된 내장기능, 글자의 길이를 알려준다거나, 
+모두 다 대문자로 변경을 하거나, 등. 
+
+외부 라이브러리(API),예) 네이버, 구글, 카카오, 메타 등. 와 
+예) 인증(로그인, 회원가입시, 보안적인 요소 때문에 사용자를 확인하는 작업),
+예) 네이버 블로그, 카페, 뉴스, 특정의 데이터를 가져올 때 사용하는 기능 등. 
+
+프레임워크(Spring , 자바기반) -> (Framework,) 반복적인 작업을 일정한 
+표준을 만들었다. 
+비유), 밀키트(부대찌개 요리, 육수, 채소, 스프, 2인분 양이 만들어짐)
+예) 스프링(자비 기반 프레임워크), 웹을 만들면, 반복적으로 하는 작업들
+1) 로그인, 로깅(기록), 인증(보안), 인가(사용자의 권한 확인), 단위테스트, 등. 
+
+
 마지막 수업. 
 오늘날 소프트웨어를 만든다고 하면 혼자서 만드는 경우는 없음. 
 이유? 누군가 만든 소프트웨어 위에서 동작하는 소프트웨어를 
@@ -2704,6 +2950,21 @@ CDN을 삽입한 코드를 모든 웹 페이지에 붙여 넣기.
 굉장히 중요한 역할을 한다는 것을 확인 함. 
 자바스크립트 커뮤니티에서 가장 중요한 라이브러리 중 하나인 
 jQuery를 사용하는 방법도 살펴봄. 
+
+
+웹으로 프론트 엔드 작업시 고려할 사항. 
+1) MPA vs SPA, 
+MPA(Multi Paga Application, 서버에서 그림도 같이 그려준다. 렌더링함.)
+html 문서가 여러 개이다. 
+여기서, 자바스크립트 할 때는 , 보통 바닐라 자바스크립트 보다 jQuery 라이브러리를 
+사용을 많이 하는 편이고, 소규모에서 많이 사용화는 편. 
+-> jsp, 스프링(공식 프론트: 타임리프 라이브러리 이용)
+
+SPA(Single Page Application, 라이브러리: 리액트, 프레임워크: Vue.js 이용함.)
+html 문서는 하나이고, body 태그안에 콘텐츠 영역만, 부품교체 하듯이, 
+해당 컴포넌트 UI 요소를 재사용하는 방식, 대규모 웹 사이트를 이용할 때, 많이 쓰이고
+
+
 -----------------------------------------------------------------
 제목 
 36 UI vs API 
