@@ -1,0 +1,122 @@
+/* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* 헤더와 푸터 사이에 공간을 동일하게 배치 */
+    min-height: 100vh;
+    background-color: rgb(61, 60, 56);
+}
+
+header {
+    background-color: #7289DA;
+    color: white;
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    order: 0;
+}
+
+.logo img {
+    height: 40px;
+}
+
+nav {
+    order: 1;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+}
+
+.form {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 50px;
+    margin: 0 auto; /* 컨테이너의 가운데에 배치됨 */
+    max-width: 400px; /* 최대 너비 지정 */
+    
+}
+
+.form h2 {
+    margin-top: 0;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: calc(100% - 22px); /* 폼의 패딩과 보더 고려하여 입력 필드의 너비 조정 */
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+/* button[type="submit"] {
+    width: 100%;
+    margin-top: 10px;
+    padding: 10px;
+    border: none;
+    border-radius: 3px;
+    background-color: #3897f0;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+} */
+
+.form button[type="submit"] {
+    float: right;
+    width: auto; /* 너비 자동 조정 */
+    margin-top: 10px; /* 상단 마진 추가 */
+    margin-bottom: 10px; /* 상단 마진 추가 */
+    padding: 8px 15px; /* 내부 여백 수정 */
+    border: none;
+    border-radius: 3px;
+    background-color: #3897f0;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: block;
+}
+
+button[type="submit"]:hover {
+    background-color: #2684f0;
+}
+
+.container {
+    background-color: #ccc;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 400px;
+    width: 100%;
+    margin: 20px auto; /* 상단과 하단에 동일한 간격으로 중앙에 위치 */
+}
+
+footer {
+    background-color: #7289DA;
+    color: white;
+    padding: 1% 35%;
+    width: 100%;
+    display: flex; /* 부모 요소를 플렉스 컨테이너로 설정하여 자식 요소들을 가로로 배열합니다. */
+    align-items: center; /* 자식 요소들을 수직으로 가운데 정렬합니다. */
+}

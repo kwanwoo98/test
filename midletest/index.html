@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>midletest - 홈화면</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <h1>midletest</h1>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <form action="#" class="form">
+                <div class="form-group">
+                    <div class="preview" id="imagePreview" onclick="document.getElementById('profile_image').click()">
+                        <img id="preview_userImage" src="user_profile.png" alt="프로필 이미지">
+                    </div>
+                    <input type="file" id="profile_image" name="profile_image" class="file-input" accept="image/*"
+                        onchange="previewImage(event)">
+                </div>
+                <input type="text" placeholder="이메일">
+                <input type="password" placeholder="비밀번호">
+                <button type="submit">로그인</button>
+                <p>계정이 없으신가요? <a href="signup.html">가입하기</a></p>
+            </form>
+        </div>
+        <script>
+            function previewImage(event) {
+                var reader = new FileReader();
+                reader.onload = function () {
+                    var preview = document.getElementById('imagePreview');
+                    preview.style.backgroundImage = 'url(' + reader.result + ')';
+                }
+                // 추가로 , 기존 이미지를 display none 으로 변경하는 코드 추가하기. 
+                // var preview_image = document.getElementById('previewImage');
+                //   preview_image.style.display = 'none';
+
+
+                reader.readAsDataURL(event.target.files[0]);
+                hideProfileImg()
+
+
+            }
+        </script>
+    </main>
+    <footer>
+        <div class="container">
+            <p>&copy; 이관우 - 1998.05.02 </p>
+        </div>
+    </footer>
+</body>
+
+</html>
