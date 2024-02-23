@@ -9,6 +9,7 @@
 </head>
 
 <body>
+    
     <header id="headerer">
         <div class="logo">
             <img src="logo.png" alt="Logo">
@@ -22,26 +23,31 @@
         </nav>
     </header>
     <!-- --------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
+    <script type="module" src="app.js"></script>
 
     <div class="container">
+        <img id="Clogo" src="doge.gif">
         <h1>Welcome to Website</h1>
         <p>You can use all the functions.</p>
         <p>Click on the address to view the design: <a href="https://ovenapp.io/project/PJrsViZujEmlGk4k4OrP0ecY4WaPUVMs#CK64s">Click here</a></p>
     
-        <form action="#" class="form">
-            
-            <input type="text" placeholder="이메일">
-            <input type="password" placeholder="비밀번호">
-            <button type="submit">로그인</button>
-            <p>계정이 없으신가요? <a href="signup.html">가입하기</a></p>
+        <form action="#" class="form" id="H_Ctner">
+            <button type="button" id="H_btn">로그인</button>
+            <p id="H_pp">계정이 없으신가요? <a href="signup.html">가입하기</a></p>
         </form>
     </div>
 
     <!-- --------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
     <footer>
-        <img src="logo.png" alt="Logo">
+        <img id="Llogo" src="logo.png" alt="Logo">
         <p>&nbsp;&nbsp;이름 : 이관우<br><br>&nbsp;&nbsp;생년월일 : 1998.05.02<br><br>&nbsp;&nbsp;오븐주소 : https://ovenapp.io/project/PJrsViZujEmlGk4k4OrP0ecY4WaPUVMs#CK64s</p>
     </footer>
+
+    <script>
+        document.getElementById('H_btn').addEventListener('click', function() {
+            window.location.href = 'login.html';
+        });
+    </script>
 </body>
 
 </html>

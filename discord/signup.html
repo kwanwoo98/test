@@ -22,21 +22,25 @@
 
     <main>
         <div class="container">
-            <form action="#" class="form">
+            <form action="#" class="form" id="signupForm">
                 <h2>회원가입</h2>
                 <input type="text" placeholder="이름">
                 <input type="text" placeholder="이메일">
-                <input type="password" placeholder="비밀번호">
-                <input type="password" placeholder="비밀번호 확인">
+                <input type="password" id="passwordInput" placeholder="비밀번호">
+                <input type="checkbox" id="showPasswordCheckbox"> <label for="showPasswordCheckbox">비밀번호 보이기</label><br>
+                <input type="password" id="confirmPasswordInput" placeholder="비밀번호 확인">
+                <input type="checkbox" id="showConfirmPasswordCheckbox"> <label for="showConfirmPasswordCheckbox">비밀번호 확인 보이기</label><br>
                 <button type="submit">가입하기</button>
-                <p>이미 계정이 있으신가요? <a href="login.html">로그인</a></p>
+                <p>계정이 있으신가요? <a href="login.html">로그인</a></p>
             </form>
         </div>
     </main>
 
     <footer>
-        <img src="logo.png" alt="Logo">
+        <img id="Llogo" src="logo.png" alt="Logo">
         <p>&nbsp;&nbsp;이름 : 이관우<br><br>&nbsp;&nbsp;생년월일 : 1998.05.02<br><br>&nbsp;&nbsp;오븐주소 : https://ovenapp.io/project/PJrsViZujEmlGk4k4OrP0ecY4WaPUVMs#CK64s</p>
     </footer>
+
+    <script src="sign.js" defer></script>
 </body>
 </html>
