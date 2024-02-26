@@ -24,8 +24,8 @@
         <div class="container">
             <form action="#" class="form" id="signupForm">
                 <h2>회원가입</h2>
-                <input type="text" placeholder="이름">
-                <input type="text" placeholder="이메일">
+                <input type="text" id="emailInput" placeholder="이메일">
+                <input type="text" id="nameInput" placeholder="이름">
                 <input type="password" id="passwordInput" placeholder="비밀번호">
                 <input type="checkbox" id="showPasswordCheckbox"> <label for="showPasswordCheckbox">비밀번호 보이기</label><br>
                 <input type="password" id="confirmPasswordInput" placeholder="비밀번호 확인">
@@ -42,5 +42,39 @@
     </footer>
 
     <script src="sign.js" defer></script>
+    <script>
+        document.getElementById('signupForm').addEventListener('submit', function(event) {
+            var emailInput = document.getElementById('emailInput');
+            var nameInput = document.getElementById('nameInput');
+            var passwordInput = document.getElementById('passwordInput');
+            var confirmPasswordInput = document.getElementById('confirmPasswordInput');
+            
+            // 이메일 형식 검사
+            var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailPattern.test(emailInput.value)) {
+                alert('이메일을 확인해 주세요');
+                event.preventDefault(); // 폼 제출 막기
+                return; // 조건 충족하지 않으면 함수 종료
+            }
+
+            // 비밀번호와 비밀번호 확인이 다른지 확인
+            if (passwordInput.value !== confirmPasswordInput.value) {
+                alert('비밀번호를 다시 확인해 주세요');
+                event.preventDefault(); // 폼 제출 막기
+                return; // 조건 충족하지 않으면 함수 종료
+            }
+
+            // 모든 input에 값이 있는지 확인
+            if (!emailInput.value || !nameInput.value || !passwordInput.value || !confirmPasswordInput.value) {
+                alert('입력되지 않은 정보가 있습니다');
+                event.preventDefault(); // 폼 제출 막기
+                return; // 조건 충족하지 않으면 함수 종료
+            }
+
+            // 모든 조건이 충족되었을 때
+            alert('회원가입이 완료되었습니다');
+            window.location.href = 'login.html'; // login.html로 이동
+        });
+    </script>
 </body>
 </html>
